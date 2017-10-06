@@ -4,6 +4,16 @@ import java.util.Scanner;
 
 public class FuncaoComRetorno {
 
+    // Não usamos VOID por que a função e do tipo double
+    // retorno tipo DOUBLE
+    public static double pedirNumero() {
+        Scanner e = new Scanner(System.in);
+        System.out.print("Digite um numero :");
+        double num = e.nextDouble();
+        return num;
+
+    }
+
     public static void criarMenu() {
 
         //Colocar o que vai aconteer ao executar
@@ -28,45 +38,47 @@ public class FuncaoComRetorno {
     }
 
     public static void calcularDobro() {
-        Scanner e = new Scanner(System.in);
+
         double n, dobro;
-        System.out.print("Digite um número: ");
-        n = e.nextDouble();
+        
+        n = pedirNumero();
+        
         dobro = n * 2;
+        
         System.out.println("Dobro de " + n + " = " + dobro);
     }
 
     public static void somar2Numeros() {
-        Scanner e = new Scanner(System.in);
-        int n, o, soma;
-        System.out.print("Digite um número: ");
-        n = e.nextInt();
-        System.out.print("Digite outro número: ");
-        o = e.nextInt();
+       
+        double n, o, soma;
+        
+        n = pedirNumero();
+        
+        o = pedirNumero();
+        
         soma = o + n;
         System.out.println("A soma de " + n + " + " + o + " = " + soma);
     }
 
     public static void raizQuadrada() {
-        Scanner e = new Scanner(System.in);
+        
         double n, resultado;
-        System.out.print("Digite um número: ");
-        n = e.nextInt();
+        
+        n = pedirNumero();
         resultado = Math.sqrt(n);
         System.out.println("A raiz quadrada de " + n + " = " + resultado);
     }
 
     public static void calcQuadrado() {
-        Scanner e = new Scanner(System.in);
+       
         double n, resultado;
-        System.out.print("Digite um número: ");
-        n = e.nextInt();
+        n = pedirNumero();
         resultado = Math.pow(n, 2);
         System.out.println("A raiz quadrada de " + n + " = " + resultado);
     }
 
-    public static void calcTab(int x) {
-        for (int i = 1; i <= 10; i++) {
+    public static void calcTab(double x) {
+        for (double i = 1; i <= 10; i++) {
             print(x + " * " + i + " = " + (x * i));
         }
     }
@@ -77,7 +89,7 @@ public class FuncaoComRetorno {
 
     public static void main(String[] args) {
         Scanner e = new Scanner(System.in);
-        int opcao = 1;
+        double opcao = 1;
 
         System.out.println("Início do programa!");
         criarMenu();
@@ -91,8 +103,8 @@ public class FuncaoComRetorno {
             } else if (opcao == 3) {
                 raizQuadrada();
             } else if (opcao == 5) {
-                System.out.println("Digite um número");
-                int y = e.nextInt();
+                
+                double y = pedirNumero();
                 calcTab(y);
             } else if (opcao == 4) {
                 calcularDobro();
