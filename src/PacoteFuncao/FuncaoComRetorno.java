@@ -1,8 +1,6 @@
-
 package PacoteFuncao;
 
 import java.util.Scanner;
-
 
 public class FuncaoComRetorno {
 
@@ -112,7 +110,4 @@ public class FuncaoComRetorno {
 
     }
 
-  
-   
-    
 }
